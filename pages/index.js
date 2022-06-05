@@ -30,7 +30,7 @@ function Home(props) {
 }
 
 export async function getStaticProps({ params = {} }) {
-  const response = await fetch('http://localhost:3000/products');
+  const response = await fetch('https://se-lecture-8-node-vercel-h814dy0vt-desoukya-gmailcom.vercel.app/api/products');
   const data = await response.text()
   const products = JSON.parse(data);
   return {

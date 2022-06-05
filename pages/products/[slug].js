@@ -26,7 +26,7 @@ function ProductPageContainer({ product }) {
 
 export async function getStaticProps({ params }) {
   const productSlug = params.slug;
-  const response = await fetch(`http://localhost:3000/products/${productSlug}`);
+  const response = await fetch(`https://se-lecture-8-node-vercel-h814dy0vt-desoukya-gmailcom.vercel.app/api/products/${productSlug}`);
   const data = await response.text()
   const product = JSON.parse(data);
   return {
@@ -38,7 +38,7 @@ export async function getStaticProps({ params }) {
 
 // pages/products/[slug]
 export async function getStaticPaths() {
-  const response = await fetch('http://localhost:3000/products');
+  const response = await fetch('https://se-lecture-8-node-vercel-h814dy0vt-desoukya-gmailcom.vercel.app/api/products');
   const data = await response.text()
   const products = JSON.parse(data);
   const paths = products.map((product) => ({ params: { slug: String(product.id) }}))

@@ -18,7 +18,7 @@ function Product(props) {
   } = props;
 
   const handleNewOrder = async (e) => {
-    const { data } = await axios.default.post('http://localhost:3000/orders', {
+    const { data } = await axios.default.post('https://se-lecture-8-node-vercel-h814dy0vt-desoukya-gmailcom.vercel.app/api/orders', {
       name,
       price,
     });
